@@ -1,0 +1,6 @@
+[
+  { "text": "ตาราง", "path": "/tablesView", "color": "it" },
+  { "text": "วิชา", "path": "/subjectsView", "color": "dsba" },
+  { "text": "ผู้ใช้", "path": "/usersView", "color": "bit" },
+  { "text": "ห้องเรียน", "path": "/roomsView", "color": "ai" }
+]
