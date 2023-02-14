@@ -41,8 +41,8 @@ export default {
   },
 };
 definePageMeta({
-    layout: 'login-layout'
-})
+  layout: "login-layout",
+});
 </script>
 
 <style lang="scss" scoped>

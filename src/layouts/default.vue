@@ -1,21 +1,28 @@
-
 import TopNavBar from '../components/TopNavigationBar/TopNavBar.vue';
 
 <template>
   <div>
     <div>
       <!-- Top Nav Bar Here -->
-      <TopNavBar/>
+      <TopNavBar />
     </div>
 
-    <!-- Contnet here -->
-    <div class="mt-24">
-        <slot />
+    <div class="mt-20 container ml-16">
+      <Header
+        :page="$route.meta.titleThai"
+        :description="$route.meta.descriptionThai"
+        :colorText="$route.meta.colorText"
+        :color="$route.meta.color"
+      />
+      <!-- Contnet here -->
+      <slot />
     </div>
+
+    <Footer />
 
     <div>
       <!-- Vector Here -->
-      <div class="absolute bottom-0">
+      <div class="fixed bottom-0 z-[-100]">
         <!-- Bottom-Left Vector -->
         <svg
           width="314"
@@ -32,7 +39,7 @@ import TopNavBar from '../components/TopNavigationBar/TopNavBar.vue';
         </svg>
       </div>
 
-      <div class="absolute bottom-0 right-0">
+      <div class="fixed bottom-0 right-0 z-[-100]">
         <!-- Bottom-Right Vector -->
         <svg
           width="291"
@@ -51,6 +58,7 @@ import TopNavBar from '../components/TopNavigationBar/TopNavBar.vue';
     </div>
   </div>
 </template>
+
 <style lang="scss">
 @import "@/sass/_colors.sass";
 

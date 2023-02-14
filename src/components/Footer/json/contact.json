@@ -1,0 +1,26 @@
+[
+    {
+        "name": "facebook",
+        "link": "https://web.facebook.com/usesir",
+        "icon": "facebook",
+        "color": "it"
+    },
+    {
+        "name": "instagram",
+        "link": "https://www.instagram.com/arm_yen/",
+        "icon": "instagram",
+        "color": "dsba"
+    },
+    {
+        "name": "linkedin",
+        "link": "https://www.linkedin.com/in/phattarakorn-yenaura-52b27a217/",
+        "icon": "linkedin",
+        "color": "bit"
+    },
+    {
+        "name": "github",
+        "link": "https://github.com/Usesir112",
+        "icon": "github",
+        "color": "ai"
+    }
+]

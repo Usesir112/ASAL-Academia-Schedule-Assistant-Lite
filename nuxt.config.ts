@@ -8,5 +8,5 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  css: ["~/css/main.css"],
+  css: ["~/css/main.css", "@fortawesome/fontawesome-svg-core/styles.css"],
 });

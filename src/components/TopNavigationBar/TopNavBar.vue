@@ -28,7 +28,12 @@
       <!-- User Information -->
       <div class="mr-3 kanit-600-16">
         <NavBarUserDetail :name="users[0].name" :role="users[0].role" />
-        <span class="text-bit"> ออกจากระบบ </span>
+        <NuxtLink to="/" class="text-bit hover:underline">
+          <span> ออกจากระบบ </span>
+          <span 
+            ><font-awesome-icon icon="fa-solid fa-arrow-right-from-bracket"
+          /></span>
+        </NuxtLink>
       </div>
     </div>
   </nav>
@@ -37,7 +42,7 @@
 import items from "./json/NavBarItems.json";
 import users from "~~/src/components/TopNavigationBar/json/users.json";
 import NavBarItems from "./NavBarItems.vue";
-import NavBarUserDetail from './NavBarUserDetail.vue';
+import NavBarUserDetail from "./NavBarUserDetail.vue";
 export default {
   components: { NavBarItems, NavBarUserDetail },
   data() {

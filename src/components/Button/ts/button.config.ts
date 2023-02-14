@@ -24,6 +24,11 @@ export function buttonConfig(color: string, type: string) {
         case "bit":
           classFill += " text-bit hover:bg-bit border-bit";
           break;
+        
+        // AI Color
+        case "ai":
+          classFill += " text-ai hover:bg-ai border-ai";
+          break;
 
         //Warning Color
         case "warning":
@@ -33,7 +38,7 @@ export function buttonConfig(color: string, type: string) {
       break;
 
     case "solid":
-      classFill += `text-white`;
+      classFill += `text-white border`;
       switch (color) {
         // IT color
         case "it":
@@ -51,6 +56,12 @@ export function buttonConfig(color: string, type: string) {
         case "bit":
           classFill +=
             " bg-bit hover:bg-bit-100 hover:border hover:border-bit hover:text-bit";
+          break;
+        
+        // Ai Color
+        case "ai":
+          classFill +=
+            " bg-ai hover:bg-ai-50 hover:border hover:border-ai hover:text-ai";
               break;
           
         //Warning Color
