@@ -1,7 +1,8 @@
 <template>
-  <section class="h-screen">
-    <h1>หน้าห้อง
-    </h1>
+  <section class="h-screen my-10">
+    <div class="">
+
+    </div>
   </section>
 </template>
 <script>

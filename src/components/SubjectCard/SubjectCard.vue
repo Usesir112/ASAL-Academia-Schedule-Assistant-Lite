@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-3 rounded-lg bg-white drop-shadow flex items-center justify-between kanit-600-16"
+    class="card bg-white kanit-600-16"
     :class="`text-${subjectBranch} hover:bg-${subjectBranch} hover:text-white`"
   >
     <!-- Tag in front of card -->
@@ -41,3 +41,6 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+@import "@/sass/_component.sass";
+</style>
