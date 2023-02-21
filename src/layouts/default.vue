@@ -2,6 +2,9 @@ import TopNavBar from '../components/TopNavigationBar/TopNavBar.vue';
 
 <template>
   <div>
+    <Head>
+      <title>{{ `${$route.meta.titleThai} | ASAP` }}</title>
+    </Head>
     <div>
       <!-- Top Nav Bar Here -->
       <TopNavBar />
@@ -58,6 +61,16 @@ import TopNavBar from '../components/TopNavigationBar/TopNavBar.vue';
     </div>
   </div>
 </template>
+
+<script>
+export default defineNuxtComponent({
+  // head(nuxtApp) {
+  //   return {
+  //     title: `${this.$route?.meta?.titleThai} | ASAP`,
+  //   };
+  // },
+});
+</script>
 
 <style lang="scss">
 @import "@/sass/_colors.sass";

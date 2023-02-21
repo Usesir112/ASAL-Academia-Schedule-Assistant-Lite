@@ -1,4 +1,9 @@
 <template>
+  <Head>
+    <title>
+      เข้าสู่ระบบ | ASAP
+    </title>
+  </Head>
   <div>
     <!-- Top Vertor and Logo -->
     <div>

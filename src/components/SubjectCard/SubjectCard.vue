@@ -1,7 +1,7 @@
 <template>
-  <div
+  <NuxtLink to="/subjectsView"
     class="card bg-white kanit-600-16"
-    :class="`text-${subjectBranch} hover:bg-${subjectBranch} hover:text-white`"
+    :class="`text-${subjectBranch} hover:bg-${subjectBranch} hover:text-white duration-300`"
   >
     <!-- Tag in front of card -->
     <div class="w-3 rounded-l-lg py-3"
@@ -24,7 +24,7 @@
       <div class="ml-5">จำนวนกลุ่มเรียน: {{ subjectGroup }}</div>
     </div>
     <div class="ml-auto mr-3">{{ isLabSubject ? "(ป.)" : "(ท.)" }}</div>
-  </div>
+    </NuxtLink>
 </template>
 <script>
 export default {
@@ -38,6 +38,11 @@ export default {
         subjectBranch: {},
         subjectGroup: {},
         isLabSubject: {},
+  },
+  methods: {
+    clickEvent() {
+        console.log("Hello")
+      }
     }
 }
 </script>
