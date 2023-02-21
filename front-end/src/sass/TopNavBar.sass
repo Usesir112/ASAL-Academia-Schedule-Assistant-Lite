@@ -1,0 +1,48 @@
+@import "@/sass/_typography.sass"
+@import "@/sass/_colors"
+body
+    font-family: $kanit
+    font-size: $size
+
+@mixin color($color)
+    color: $color
+    svg
+        path
+            fill: $color
+
+@mixin hover($color)
+    &:hover
+        color: $color
+        svg
+            path
+                fill: $color
+    
+.not-active
+    &-it
+        @include color($disable)
+        @include hover($it)
+    
+    &-dsba
+        @include color($disable)
+        @include hover($dsba)
+    
+    &-bit
+        @include color($disable)
+        @include hover($bit)
+
+    &-ai
+        @include color($disable)
+        @include hover($ai)
+
+.active
+    &-it
+        @include color($it)
+
+    &-dsba
+        @include color($dsba)
+
+    &-bit
+        @include color($bit)
+    
+    &-ai
+        @include color($ai)
