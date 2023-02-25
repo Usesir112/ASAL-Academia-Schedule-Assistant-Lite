@@ -1,7 +1,7 @@
 <template>
   <NuxtLink to="/subjectsView"
     class="card bg-white kanit-600-16"
-    :class="`text-${subjectBranch} hover:bg-${subjectBranch} hover:text-white duration-300`"
+    :class="`text-${subjectBranch} hover:bg-${subjectBranch} hover:text-white duration-100`"
   >
     <!-- Tag in front of card -->
     <div class="w-3 rounded-l-lg py-3"
@@ -39,11 +39,6 @@ export default {
         subjectGroup: {},
         isLabSubject: {},
   },
-  methods: {
-    clickEvent() {
-        console.log("Hello")
-      }
-    }
 }
 </script>
 <style lang="scss" scoped>

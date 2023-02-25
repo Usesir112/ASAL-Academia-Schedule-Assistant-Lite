@@ -1,6 +1,6 @@
 [
-  { "text": "ตาราง", "path": "/tablesView", "color": "it" },
-  { "text": "วิชา", "path": "/subjectsView", "color": "dsba" },
-  { "text": "ผู้ใช้", "path": "/usersView", "color": "bit" },
-  { "text": "ห้องเรียน", "path": "/roomsView", "color": "ai" }
+  { "text": "ตาราง", "path": "/tablesView", "color": "it", "icon": "table-columns" },
+  { "text": "วิชา", "path": "/subjectsView", "color": "dsba", "icon": "file-lines" },
+  { "text": "ผู้ใช้", "path": "/usersView", "color": "bit", "icon": "users" },
+  { "text": "ห้องเรียน", "path": "/roomsView", "color": "ai", "icon": "door-open" }
 ]

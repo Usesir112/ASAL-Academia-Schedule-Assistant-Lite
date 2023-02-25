@@ -1,6 +1,44 @@
-version: "2"
+version: "3"
 services:
+  # Front-end
   front-end:
     build: ./front-end
+    volumes:
+      - /app/front-end/node_modules
     ports:
       - "3000:3000"
+    networks:
+      - asap_network
+
+  # Database
+  db:
+    image: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: admin
+    networks:
+      - asap_network
+
+  # pgadmin4
+  pg4:
+    depends_on:
+      - db
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: postgres@email.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    networks:
+      - asap_network
+
+networks:
+  asap_network:
+
+volumes:
+  db_data:

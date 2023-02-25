@@ -16,6 +16,7 @@
             :key="item.text"
             :text="item.text"
             :path="item.path"
+            :icon="item.icon"
             :class="[
               item.path === $route.path
                 ? `active-${item.color}`
