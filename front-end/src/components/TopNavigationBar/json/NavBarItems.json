@@ -1,8 +1,5 @@
 [
-  { "text": "ตาราง", "path": "/tablesView", "color": "it", "icon": "table-columns" },
-  { "text": "หลักสูตร", "path": "/curriculumView", "color": "warning", "icon": "folder-open" },
   { "text": "วิชา", "path": "/subjectsView", "color": "dsba", "icon": "file-lines" },
-  { "text": "อาจารย์ผู้สอน", "path": "/lecturerView", "color": "orange", "icon": "user-tie" },
   { "text": "ห้องเรียน", "path": "/roomsView", "color": "ai", "icon": "door-open" },
   { "text": "ผู้ใช้", "path": "/usersView", "color": "bit", "icon": "users" }
   

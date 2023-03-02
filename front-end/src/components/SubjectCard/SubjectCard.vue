@@ -1,15 +1,17 @@
 <template>
   <div :class="`text-${subject.subjectBranch}`">
     <!-- Header -->
-    <!-- Here -->
     <div
       class="card bg-white kanit-600-16 flex flex-col cursor-pointer"
-      :class="`hover:bg-${subject.subjectBranch} hover:text-white duration-100 `"
+      :class="hoverHeader(subject.subjectBranch)"
       @click="collapsed()"
     >
       <div class="w-full flex items-center">
         <!-- Tag in front of card -->
-        <div class="w-3 rounded-l-lg py-3" :class="`bg-${subject.subjectBranch}`">
+        <div
+          class="w-3 rounded-l-lg py-3"
+          :class="`bg-${subject.subjectBranch}`"
+        >
           <span class="text-transparent">r</span>
         </div>
         <!-- Tag in front of card -->
@@ -24,11 +26,15 @@
           </div>
           <div class="ml-5">{{ subject.subjectUnit }}</div>
           <div class="ml-5">ชั้นปีที่ {{ subject.subjectYear }}</div>
-          <div class="ml-5 uppercase w-10 text-center">{{ subject.subjectBranch }}</div>
+          <div class="ml-5 uppercase w-10 text-center">
+            {{ subject.subjectBranch }}
+          </div>
           <div class="ml-5">จำนวนกลุ่มเรียน: {{ subject.subjectGroup }}</div>
         </div>
 
-        <div class="ml-auto mr-3">{{ subject.isLabSubject ? "(ป.)" : "(ท.)" }}</div>
+        <div class="ml-auto mr-3">
+          {{ subject.isLabSubject ? "(ป.)" : "(ท.)" }}
+        </div>
       </div>
     </div>
     <!-- Header -->
@@ -141,6 +147,19 @@ export default {
     };
   },
   methods: {
+    hoverHeader(color) {
+      let className = "hover:text-white duration-100 ";
+      const bgColor = {
+        it: "hover:bg-it",
+        dsba: "hover:bg-dsba",
+        bit: "hover:bg-bit",
+        ai: "hover:bg-ai",
+      };
+
+      className += bgColor[color];
+
+      return className;
+    },
 
     collapsed() {
       this.isCollapsed = !this.isCollapsed;
@@ -160,10 +179,9 @@ export default {
     },
 
     copyBtn() {
-      const subjectJSON = JSON.stringify(this.subject)
-      navigator.clipboard.writeText(subjectJSON)
-      navigator.clipboard.readText()
-      .then((data) => console.log(data))
+      const subjectJSON = JSON.stringify(this.subject);
+      navigator.clipboard.writeText(subjectJSON);
+      navigator.clipboard.readText().then((data) => console.log(data));
       this.copy = !this.copy;
       setTimeout(() => {
         this.copy = !this.copy;
@@ -171,7 +189,7 @@ export default {
     },
   },
   props: {
-    subject:{},
+    subject: {},
   },
 };
 </script>

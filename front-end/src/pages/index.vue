@@ -14,7 +14,7 @@
 
       <!-- Text line two -->
       <div class="text-it kanit-600-24 mt-5">
-        <p>Academia Schedule Assistant Pro</p>
+        <p>Academia Schedule Assistant Lite</p>
       </div>
 
       <!-- Text line one -->
@@ -24,7 +24,7 @@
 
       <!-- Login Button -->
       <div class="mt-5">
-        <NuxtLink to="/tablesView" :class="`btn-outline-it`">
+        <NuxtLink to="/subjectsView" :class="`btn-outline-it`">
           <img src="@/assets/icons/google-icon.svg" alt="Google Logo" />
           <span class="ml-5">เข้าสู่ระบบด้วย Google</span>
         </NuxtLink>
