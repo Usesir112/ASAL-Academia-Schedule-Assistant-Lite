@@ -29,7 +29,7 @@
           <input
             type="search"
             id="search"
-            class="block w-full p-3 pl-10 text-sm rounded-lg bg-white focus:border-it"
+            class="block w-full p-3 pl-10 text-sm rounded-lg bg-white focus:outline-none focus:shadow-xl duration-300"
             :placeholder="`ค้นหา${page}`"
           />
         </div>
@@ -43,7 +43,7 @@
 
         <!-- Add Table Button -->
         <div class="ml-3">
-          <NuxtLink to="/" :class="buttonConfig(color, 'solid')">
+          <NuxtLink to="/" :class="`btn-sol-${color}`">
             <span class="mr-3"> เพิ่ม{{ page }} </span>
             <font-awesome-icon icon="fa-solid fa-plus" />
           </NuxtLink>
@@ -64,7 +64,6 @@
   </div>
 </template>
 <script>
-import { buttonConfig } from "@/components/Button/ts/button.config";
 export default {
   props: {
     page: {},
@@ -72,11 +71,9 @@ export default {
     color: {},
     colorText: {},
   },
-  methods: {
-    buttonConfig,
-  },
 };
 </script>
 <style lang="sass">
 @import "@/sass/_typography"
+@import "@/sass/_component.sass"
 </style>

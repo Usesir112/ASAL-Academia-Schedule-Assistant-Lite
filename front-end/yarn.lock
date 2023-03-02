@@ -357,6 +357,11 @@
   resolved "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.3.tgz"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
+"@headlessui/vue@^1.0.0", "@headlessui/vue@^1.7.11":
+  version "1.7.11"
+  resolved "https://registry.npmjs.org/@headlessui/vue/-/vue-1.7.11.tgz"
+  integrity sha512-VsNqx9Lc1ftOyIazBF9EX5BS4WYwwaFX+1jBWXQakeH1o4xnoZKlBSlvEgmAnFLO9GDVmn7kKVOWfFgQn2aRZA==
+
 "@ioredis/commands@^1.1.1":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@ioredis/commands/-/commands-1.2.0.tgz"
@@ -4223,6 +4228,15 @@ nuxi@3.1.2:
   integrity sha512-AJsGATQ6+jQYjwlPqM3ST24t4et/GDeoePtrBLsJEU4MNwVAZJM9lv8UyIlY+UeQVx10ZCn76sksOX7a1ViFEw==
   optionalDependencies:
     fsevents "~2.3.2"
+
+nuxt-headlessui@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/nuxt-headlessui/-/nuxt-headlessui-1.1.1.tgz"
+  integrity sha512-sf8qZQvGDaI+uNnKuynFGY+VXScDNEj3W0LMjv2XH4jO4ksQzbliCB9Hl5cdd/VIFPVmnZm+dnneURSI4/1fXw==
+  dependencies:
+    "@headlessui/vue" "^1.0.0"
+    "@nuxt/kit" "^3.0.0"
+    pathe "^1.0.0"
 
 nuxt@^3.1.2:
   version "3.1.2"

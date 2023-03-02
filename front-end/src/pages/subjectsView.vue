@@ -1,17 +1,9 @@
 <template>
-  <section class="h-screen my-10">
+  <section class="my-10 min-h-screen">
     <SubjectCard
     v-for="subject in subjects"
     :key="subject.subjectNum"
-    :subjectNum="subject.subjectNum"
-        :subjectName="subject.subjectName"
-        :subjectCourseY="subject.subjectCourseY"
-        :subjectInstructor="subject.subjectInstructor"
-        :subjectUnit="subject.subjectUnit"
-        :subjectYear="subject.subjectYear"
-        :subjectBranch="subject.subjectBranch"
-        :subjectGroup="subject.subjectTheoryGroupNum"
-        :isLabSubject="subject.isLabSubject"/>
+    :subject="subject"/>
   </section>
 </template>
 

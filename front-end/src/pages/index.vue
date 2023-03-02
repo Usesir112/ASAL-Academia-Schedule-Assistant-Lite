@@ -24,7 +24,7 @@
 
       <!-- Login Button -->
       <div class="mt-5">
-        <NuxtLink to="/tablesView" :class="buttonConfig('it', 'outlined')">
+        <NuxtLink to="/tablesView" :class="`btn-outline-it`">
           <img src="@/assets/icons/google-icon.svg" alt="Google Logo" />
           <span class="ml-5">Log in with Google</span>
         </NuxtLink>
@@ -34,17 +34,12 @@
 </template>
 
 <script>
-import { buttonConfig } from "@/components/Button/ts/button.config";
-export default {
-  methods: {
-    buttonConfig,
-  },
-};
 definePageMeta({
   layout: "login-layout",
 });
 </script>
 
-<style lang="scss" scoped>
-@import "@/sass/login.sass";
+<style lang="sass" scoped>
+@import "@/sass/login.sass"
+@import "@/sass/_component.sass"
 </style>

@@ -1,15 +1,103 @@
 @use 'sass-rem' as to
-@use 'colors'
-@use 'typography'
+@import "@/sass/_colors"
+@import "@/sass/_typography.sass"
 
 $shadow: 44px 38px 23px rgb(0 0 0 / 1%), 7px 13px 16px rgb(0 0 0 / 4%), 11px 10px 15px rgb(0 0 0 / 0%), 3px 2px 8px rgb(0 0 0 / 3%), 0px 0px 0px rgb(0 0 0 / 10%)
 $rounded: to.rem(10px)
 
+@mixin btn($color , $light,  $outline: false)
+
+    @if $outline
+        color: $color
+        background-color: $white
+    
+    @else 
+        color: $white
+        background-color: $color
+
+    //shadow-md
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))
+
+    ///inline-flex
+    display: inline-flex
+
+    //items-center
+    align-items: center
+
+    //font-semibold
+    font-weight: 600
+
+    //rounded-lg
+    border-radius: 0.5rem
+
+    //py-2 px-4
+    padding: 0.5rem 1rem
+
+    //border
+    border: 1px solid $color
+
+    //duration-100
+    transition-duration: 100ms
+
+    &:hover
+
+        filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))
+
+        @if $outline
+            color: $white
+            background-color: $color
+        
+        @else 
+            color: $color
+            background-color: $light
+            border: 1px solid $light
+    
+    &:disabled
+        background-color: $disable
+        pointer-events: none
+        border: none
+    
 .card
-    margin-top: 0.75rem //w-3
-    border-radius: 0.5rem //rounded-lg
-    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06)) //drop-shadow
-    display: flex //flex
-    align-items: center //items-center
-    justify-content: space-between //justify-between
+    //w-3
+    margin-top: 0.75rem 
+
+    //rounded-lg
+    border-radius: 0.5rem 
+
+    //drop-shadow
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06))
+
+    //flex 
+    display: flex
+
+    //items-center 
+    align-items: center 
+
+    //justify-between
+    justify-content: space-between 
+
+.btn
+    &-sol
+        &-it
+            @include btn($it, $it-100)
+        &-bit
+            @include btn($bit, $bit-100)
+        &-warning
+            @include btn($warning, $warning-light)
+        &-dsba
+            @include btn($dsba, #c4b5fd)
+        &-ai
+            @include btn($ai, $ai-50)
+
+        &-orange-700
+            @include btn($orange, $orange-50)
+    
+    &-outline
+        &-bit
+            @include btn($bit, $bit-100, $outline: true)
+        &-it
+            @include btn($it, $it-100, $outline: true)
+        
+
+    
 

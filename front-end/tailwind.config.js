@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./nuxt.config.{js,ts}", "./src/**/*.{js,vue,ts}"],
+  content: [
+    "./nuxt.config.{js,ts}",
+    "./src/**/*.{js,vue,ts}",
+    "./src/**/*.{js,vue,ts}",
+  ],
   theme: {
     extend: {
       colors: {
