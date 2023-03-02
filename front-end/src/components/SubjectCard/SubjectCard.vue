@@ -50,18 +50,18 @@
           <form-input
             :disabled="disabled"
             label="รหัสวิชา"
-            :value="subject.subjectNum"
+            v-model="editingState.subjectNum"
           />
           <form-input
             :disabled="disabled"
             label="ชื่อวิชา"
-            :value="subject.subjectName"
+            v-model="editingState.subjectName"
             class="col-span-4"
           />
           <form-input
             :disabled="disabled"
             label="อาจารย์ผู้สอน"
-            :value="subject.subjectInstructor"
+            v-model="editingState.subjectInstructor"
             class="col-span-3"
           />
         </div>
@@ -71,39 +71,49 @@
           <form-input
             :disabled="disabled"
             label="ชั้นปี"
-            :value="subject.subjectYear"
+            v-model="editingState.subjectYear"
           />
           <form-input
             :disabled="disabled"
             label="สาขา"
-            :value="subject.subjectBranch"
+            v-model="editingState.subjectBranch"
           />
           <form-input
             :disabled="disabled"
             label="หน่วยกิต"
-            :value="subject.subjectUnit"
+            v-model="editingState.subjectUnit"
           />
           <form-input
             :disabled="disabled"
             label="จำนวนกลุ่มเรียน"
-            :value="subject.subjectGroup"
+            v-model="editingState.subjectGroup"
           />
           <form-input
             :disabled="disabled"
             label="หลักสูตร"
-            :value="subject.subjectCourseY"
+            v-model="editingState.subjectCourseY"
           />
           <form-input
             :disabled="disabled"
             label="กลุ่มวิชา"
-            :value="subject.subjectType"
+            v-model="editingState.subjectType"
             class="col-span-2"
           />
-          <form-input
+          <div class="flex flex-col mx-2">
+            <label>ประเภทวิชา</label>
+            <select
+              v-model="editingState.isLabSubject"
+              :disabled="disabled"
+              class="shadow rounded-lg py-2 px-5 mt-2 transition-all duration-300 focus:shadow-lg focus:outline-none cursor-pointer focus:cursor-text disabled:text-disable-100 disabled:cursor-not-allowed"
+            >
+              <option value="ทฤษฏี">ทฤษฏี</option>
+              <option value="ปฏิบัติ">ปฏิบัติ</option>
+            </select>
+          </div>
+          <!-- <form-input
             :disabled="disabled"
             label="ประเภทวิชา"
-            :value="subject.isLabSubject ? 'ปฎิบัติ' : 'ทฤษฎี'"
-          />
+          /> -->
         </div>
 
         <!-- Third coulumn, Include Button Action -->
@@ -167,20 +177,26 @@ export default {
       isCollapsed: false,
       disabled: true,
       editingState: {
-        subjectNum: "",
-        subjectName: "",
-        subjectCourseY: "",
-        subjectType: "",
-        subjectInstructor: "",
-        subjectUnit: "",
-        subjectGroup: "",
-        subjectYear: "",
-        subjectBranch: "",
-        subjectTheoryGroupNum: "",
-        subjectLabGroupNum: "",
-        isLabSubject: false,
+        subjectNum: this.subject.subjectNum,
+        subjectName: this.subject.subjectName,
+        subjectCourseY: this.subject.subjectCourseY,
+        subjectType: this.subject.subjectType,
+        subjectInstructor: this.subject.subjectInstructor,
+        subjectUnit: this.subject.subjectUnit,
+        subjectGroup: this.subject.subjectGroup,
+        subjectYear: this.subject.subjectYear,
+        subjectBranch: this.subject.subjectBranch,
+        subjectTheoryGroupNum: this.subject.subjectTheoryGroupNum,
+        subjectLabGroupNum: this.subject.subjectLabGroupNum,
+        isLabSubject: this.subject.isLabSubject ? "ปฏิบัติ" : "ทฤษฏี",
       },
     };
+  },
+  beforeUpdate() {
+    console.log(this.editingState.subjectName);
+  },
+  updated() {
+    console.log(this.editingState.subjectName);
   },
   methods: {
     hoverHeader(color) {
@@ -231,9 +247,12 @@ export default {
 
     saveEdit() {
       this.disabled = !this.disabled;
-      //this.subject = this.editingState;
+
+      const index = this.getAllSubject.indexOf(this.subject);
+      this.getAllSubject.splice(index, 1, this.editingState);
     },
   },
+
   props: {
     subject: {},
     allSubjects: {},

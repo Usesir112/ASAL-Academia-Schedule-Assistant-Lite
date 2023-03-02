@@ -2,9 +2,9 @@
   <section class="my-10 min-h-screen">
     <SubjectCard
       v-for="subject in subjects"
-      :allSubjects="subjects"
       :key="subject.subjectNum"
       :subject="subject"
+      :allSubjects="subjects"
     />
   </section>
 </template>
