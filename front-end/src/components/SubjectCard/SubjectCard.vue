@@ -108,7 +108,10 @@
 
         <!-- Third coulumn, Include Button Action -->
         <div class="p-3 mr-1 flex justify-end">
-          <button class="mx-1 btn-outline-bit" @click="openDeleteModal">
+          <button
+            class="mx-1 btn-outline-bit"
+            @click="openDeleteModal(subject.subjectNum)"
+          >
             ลบวิชา
           </button>
           <button
@@ -117,11 +120,29 @@
           >
             {{ copy ? "คัดลอก" : "คัดลอกแล้ว" }}
           </button>
-          <button class="mx-1 btn-sol-warning" @click="disabled = !disabled">
+          <button
+            class="mx-1 btn-sol-warning"
+            @click="disabled = !disabled"
+            v-show="disabled"
+          >
             แก้ไข
           </button>
-          <button class="mx-1 btn-sol-bit" :disabled="disabled">ยกเลิก</button>
-          <button class="mx-1 btn-sol-ai" :disabled="disabled">บันทึก</button>
+          <button
+            class="mx-1 btn-sol-bit"
+            :disabled="disabled"
+            @click="disabled = !disabled"
+            v-show="!disabled"
+          >
+            ยกเลิก
+          </button>
+          <button
+            class="mx-1 btn-sol-ai"
+            :disabled="disabled"
+            @click="saveEdit"
+            v-show="!disabled"
+          >
+            บันทึก
+          </button>
         </div>
       </div>
       <modal-delete
@@ -140,10 +161,25 @@ export default {
   components: { FormInput },
   data() {
     return {
+      getAllSubject: this.allSubjects,
       copy: true,
       deleteModal: false,
       isCollapsed: false,
       disabled: true,
+      editingState: {
+        subjectNum: "",
+        subjectName: "",
+        subjectCourseY: "",
+        subjectType: "",
+        subjectInstructor: "",
+        subjectUnit: "",
+        subjectGroup: "",
+        subjectYear: "",
+        subjectBranch: "",
+        subjectTheoryGroupNum: "",
+        subjectLabGroupNum: "",
+        isLabSubject: false,
+      },
     };
   },
   methods: {
@@ -176,10 +212,15 @@ export default {
 
     confirmDeleteModal() {
       this.deleteModal = false;
+      this.deleteSubject();
+    },
+
+    deleteSubject() {
+      this.getAllSubject.splice(this.getAllSubject.indexOf(this.subject), 1);
     },
 
     copyBtn() {
-      const subjectJSON = JSON.stringify(this.subject);
+      this.subjectJSON = JSON.stringify(this.subject);
       navigator.clipboard.writeText(subjectJSON);
       navigator.clipboard.readText().then((data) => console.log(data));
       this.copy = !this.copy;
@@ -187,9 +228,15 @@ export default {
         this.copy = !this.copy;
       }, 1000);
     },
+
+    saveEdit() {
+      this.disabled = !this.disabled;
+      //this.subject = this.editingState;
+    },
   },
   props: {
     subject: {},
+    allSubjects: {},
   },
 };
 </script>

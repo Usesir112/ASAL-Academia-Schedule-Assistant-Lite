@@ -1,14 +1,16 @@
 <template>
   <section class="my-10 min-h-screen">
     <SubjectCard
-    v-for="subject in subjects"
-    :key="subject.subjectNum"
-    :subject="subject"/>
+      v-for="subject in subjects"
+      :allSubjects="subjects"
+      :key="subject.subjectNum"
+      :subject="subject"
+    />
   </section>
 </template>
 
 <script>
-import  subjects  from "@/components/SubjectCard/subjects.json"
+import subjects from "@/components/SubjectCard/subjects.json";
 
 definePageMeta({
   title: "Subjects",
@@ -21,8 +23,8 @@ definePageMeta({
 export default {
   data() {
     return {
-      subjects
-    }
-  }
-}
+      subjects,
+    };
+  },
+};
 </script>
