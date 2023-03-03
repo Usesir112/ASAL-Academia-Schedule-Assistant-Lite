@@ -192,12 +192,7 @@ export default {
       },
     };
   },
-  beforeUpdate() {
-    console.log(this.editingState.subjectName);
-  },
-  updated() {
-    console.log(this.editingState.subjectName);
-  },
+
   methods: {
     hoverHeader(color) {
       let className = "hover:text-white duration-100 ";
