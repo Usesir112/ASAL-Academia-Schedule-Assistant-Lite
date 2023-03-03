@@ -3,7 +3,7 @@ import TopNavBar from '../components/TopNavigationBar/TopNavBar.vue';
 <template>
   <div>
     <Head>
-      <title>{{ `${$route.meta.titleThai} | ASAP` }}</title>
+      <title>{{ `${$route.meta.titleThai} | ASAL` }}</title>
     </Head>
     <div>
       <!-- Top Nav Bar Here -->
